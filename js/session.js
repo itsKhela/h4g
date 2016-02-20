@@ -9,7 +9,7 @@ $( document ).ready(function() {
 	var ttlSession = 60000*90; //90 minutes time of the session
 
 	var loginTime = localStorage.getItem("loginTime");
-	if( loginTime != null){
+	if( loginTime != null && (window.location.href).contains("login.html") ){
 		if((new Date().getTime()) - loginTime < ttlSession){
 			window.location.href = "index.html";
 		}
