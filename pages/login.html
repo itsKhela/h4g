@@ -11,6 +11,10 @@
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <script src="../js/login.js"></script>
+
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -45,10 +49,10 @@
                         <form role="form">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                    <input id="email" class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    <input id="password" class="form-control" placeholder="Password" name="password" type="password" value="">
                                 </div>
                                 <div class="checkbox">
                                     <label>
@@ -56,7 +60,7 @@
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>
+                                <div id="login-button" href="index.html" class="btn btn-lg btn-success btn-block">Login</div>
                             </fieldset>
                         </form>
                     </div>
