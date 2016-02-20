@@ -1,0 +1,52 @@
+
+<html>
+<head>
+	<meta charset="UTF-8">
+
+	<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/quique.js"></script>
+       
+    
+</head>
+<body>
+
+
+
+    <input type="text" id="member" name="member" value="">Number of members: (max. 10)<br />
+    <a href="#" id="filldetails" onclick="addFields()">Fill Details</a>
+    <div id="container"/>
+
+<form>
+  
+  <div class="form-group">
+  <label>Nombre test</label>
+      <input class="form-control" placeholder="Enter text" name="name">
+  </div>
+  
+  <div class="form-group">
+            <label>Descripción :</label>
+            <textarea class="form-control" rows="3" name="description"></textarea>
+  </div>
+
+  <div class="form-group">
+            <label>Problema a valorar :</label>
+            <textarea class="form-control" rows="3" name="problem"></textarea>
+  </div>
+<br>
+
+Añadir valoración:
+
+<select name="restriction">
+   <option value="1">Windows Vista</option> 
+   <option value="2">Windows 7</option> 
+   <option value="3">Windows XP</option>
+   <option value="10">Fedora</option> 
+   <option value="11">Debian</option> 
+   <option value="12">Suse</option> 
+</select>
+
+
+</form>
+
+</body>
+</html>
