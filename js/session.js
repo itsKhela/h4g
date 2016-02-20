@@ -15,12 +15,21 @@ $( document ).ready(function() {
 		}
 	}
 
+	if( loginTime == null && !(window.location.href).contains("login.html") ){
+			window.location.href = "login.html";
+	}
+
     $( "#login-button" ).click(function() {
     	login(
     		$("#email").val(), 
     		$("#password").val()
     	);
 	});
+
+	$( "#logout-button" ).click(function() {
+    	logout();
+	});
+	
 });
 
 function getStringParameter(key, value){
