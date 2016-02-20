@@ -1,20 +1,27 @@
 
 <html>
 <head>
-	<meta charset="UTF-8">
 
+	<meta charset="UTF-8">
+		
 	<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="../js/quique.js"></script>
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    
        
     
 </head>
 <body>
+ <script>
+        $(document).ready(function() {
+            $("#includeNavigation").load("navigation.html");
+        });
+    </script> 
 
 
 
-    <input type="text" id="member" name="member" value="">Number of members: (max. 10)<br />
-    <a href="#" id="filldetails" onclick="addFields()">Fill Details</a>
-    <div id="container"/>
+   
 
 <form>
   
@@ -34,16 +41,11 @@
   </div>
 <br>
 
-Añadir valoración:
+<div id = "rectrictions">
+	
+</div>	
 
-<select name="restriction">
-   <option value="1">Windows Vista</option> 
-   <option value="2">Windows 7</option> 
-   <option value="3">Windows XP</option>
-   <option value="10">Fedora</option> 
-   <option value="11">Debian</option> 
-   <option value="12">Suse</option> 
-</select>
+ <input id="add-restriction-button" type="button" value="Añade restricción">
 
 
 </form>
