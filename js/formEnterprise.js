@@ -3,13 +3,6 @@ var cont = 0;
 
 $(function(){
     $('#add-restriction-button').on('click',function(){
-
-      var contain = '<option value="contain"> Contiene</option>';
-      var check='<option value="checkCopypaste">Verificar que no sea copiado de otras páginas</option>'
-      var spelling = '<option value="spelling">Verificar ortografía</option>'
-      var replyTime = '<option value="replyTime">Controlar tiempo de respuesta</option>'
-      var psicotecnico =' <option value= "psicotecnico">Hacer antes psicotécnico</option>'
-
         var r= $('<div class="form-group">'+
                     '<label>Reglas</label>'+
                     '<select class="form-control" id="listRules">'+
@@ -21,10 +14,6 @@ $(function(){
                    '</select>'+
                   '<input id="addRule" type="button" value="Añade esta restricción">'+
                   '</div> ');
-        
-
-
-
 
         $("body").append(r);
 
@@ -35,6 +24,22 @@ $(function(){
 
     });
 });
+
+
+
+function selects(){
+  $('#addRule').click(function(){
+                  
+  var option = $( "#listRules option:selected" ).val()
+
+  if ( option=='checkCopypaste') {
+ 
+    alert('funca');
+ 
+    }
+  });
+}
+
 
 
 
@@ -52,15 +57,20 @@ function switchHtml(){
                     break;
                 case 'checkCopypaste': 
                    createCheck();
+                   $('option[value=checkCopypaste]').remove();
+
                     break;
                 case 'spelling': 
                     createSepelling();
+                    $('option[value=spelling]').remove();
                     break;    
                 case 'replyTime': 
-                    createReplyTime()
+                    createReplyTime();
+                    $('option[value=replyTime]').remove();
                     break;
                 case 'psicotecnico': 
                     createPsico();
+                    $('option[value=psicotecnico]').remove();
                     break;
                 default:
                   alert('Nobody Wins!');
@@ -85,7 +95,7 @@ function createContain(){
 
 
     $('#rectrictions').append(comp);
-    deleteParam('#'+idcontain,f,delet);
+    deleteParam('#'+idcontain,f,delet,idcontain);
 
 
 };
@@ -101,7 +111,7 @@ function createCheck(){
 
 
     $('#rectrictions').append(comp);
-    deleteParam('#'+check,f,delet);
+    deleteParam('#'+check,f,delet,check);
 
     
 
@@ -121,7 +131,7 @@ function createSepelling(){
 
 
     $('#rectrictions').append(comp);
-    deleteParam('#'+spelling,f,delet);
+    deleteParam('#'+spelling,f,delet,spelling);
 
     
 
@@ -138,7 +148,7 @@ function createReplyTime(){
 
 
     $('#rectrictions').append(comp);
-    deleteParam('#'+reply,f,delet);
+    deleteParam('#'+reply,f,delet,reply);
 
 };
 
@@ -155,7 +165,7 @@ function createPsico(){
 
 
     $('#rectrictions').append(comp);
-    deleteParam('#'+psico,f,delet);
+    deleteParam('#'+psico,f,delet,psico);
 
     
 
@@ -163,15 +173,40 @@ function createPsico(){
 };
 
 
-function deleteParam(id,f,del){
+function deleteParam(id,f,del,ide){
 
 $('#'+del).click(function(){
   $('label[for='+f+']').remove();
   $(id).remove();
   $('#'+del).remove();
 
-  $('br[for='+del+']').remove();
+  $('br[for='+del+']').remove();   
+  checkin(ide);  
 
 });};
 
 
+function checkin(ide){
+
+switch (ide) {
+  case 'checkcopypaste': 
+    $('#listRules').append('<option value="checkCopypaste">Verificar que no sea copiado de otras páginas</option>');
+  
+  break;
+  case 'checkspelling': 
+    $('#listRules').append('<option value="spelling">Verificar ortografía</option>');
+  
+  break;
+  case 'checkreplytime': 
+    $('#listRules').append('<option value="replyTime">Controlar tiempo de respuesta</option>');
+  
+  break;
+  case 'checkpsicotecnico': 
+    $('#listRules').append('<option value= "psicotecnico">Hacer antes psicotécnico</option>');
+  
+  break;
+
+
+}
+
+};
