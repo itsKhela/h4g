@@ -15,13 +15,14 @@ $( document ).ready(function() {
 		}
 	}
 
-	if( loginTime == null && !(window.location.href).contains("login.html") ){
-			window.location.href = "login.html";
-	}
+// Está comentado mientras se resuelve el error
+//	if( loginTime == null && !(window.location.href).contains("login.html") ){
+//			window.location.href = "login.html";
+//	}
 
     $( "#login-button" ).click(function() {
     	login(
-    		$("#email").val(), 
+    		$("#email").val(),
     		$("#password").val()
     	);
 	});
@@ -29,7 +30,7 @@ $( document ).ready(function() {
 	$( "#logout-button" ).click(function() {
     	logout();
 	});
-	
+
 });
 
 function getStringParameter(key, value){
@@ -39,14 +40,14 @@ function getStringParameter(key, value){
 function login(email, password){
   	$.ajax({
   		url: "http://shr.mybluemix.net/api/users?apikey=icinetic&conditions={"
-  			+ getStringParameter("email", email) +"," 
+  			+ getStringParameter("email", email) +","
   			+ getStringParameter("password", password) +
   		"}",
   		dataType: 'json',
   		cache: false,
   		type: "GET",
   		success: function( data, textStatus, jqxhr ) {
-  			if(data.length == 1){	
+  			if(data.length == 1){
    	 			localStorage.setItem("name", data[0].name);
    	 			localStorage.setItem("id", data[0]._id);
    	 			localStorage.setItem("rol", data[0].rol);
@@ -63,6 +64,3 @@ function logout(){
 	localStorage.clear();
 	window.location.href = "login.html";
 }
-
-
-
