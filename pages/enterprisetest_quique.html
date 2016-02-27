@@ -1,0 +1,54 @@
+
+<html>
+<head>
+
+	<meta charset="UTF-8">
+		
+	<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../js/formEnterprise.js"></script>
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    
+       
+    
+</head>
+<body>
+ <script>
+        $(document).ready(function() {
+            $("#includeNavigation").load("navigation.html");
+        });
+    </script> 
+
+
+
+   
+
+<form>
+  
+  <div class="form-group">
+  <label>Nombre test</label>
+      <input class="form-control" placeholder="Enter text" name="name">
+  </div>
+  
+  <div class="form-group">
+            <label>Descripción :</label>
+            <textarea class="form-control" rows="3" name="description"></textarea>
+  </div>
+
+  <div class="form-group">
+            <label>Problema a valorar :</label>
+            <textarea class="form-control" rows="3" name="problem"></textarea>
+  </div>
+<br>
+
+
+
+ <input id="add-restriction-button" type="button" value="Añade restricción">
+<div id = "rectrictions">
+  
+</div>  
+
+</form>
+
+</body>
+</html>
